@@ -7,51 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Houdini - Paint Worklet</title>
 </head>
-<script>
-    // CSS.paintWorklet.addModule(
-    //     "https://unpkg.com/curved-line@1.0.0/curved-line.js"
-    // );
 
-    // CSS.paintWorklet.addModule('https://unpkg.com/houdini-static-gradient/worklet.js')
-    CSS.paintWorklet.addModule('https://unpkg.com/houdini-doom-fire@0.1.0/DoomFire.js')
-</script>
 <style>
-        /* h1 {
-            --extra-confettiNumber: 190;
-            --extra-confettiLengthVariance: 12;
-            --extra-confettiWeightVariance: 3;
-            background: paint(extra-confetti);
-        } */
     body{
         padding: 0;
         margin: 0;
+        box-sizing: border-box;
     }
-    div{
+    section{
         width: 100%;
         min-height: 100vh;
     }
-    /* .demo{
-        background: paint(static-gradient);
-        --static-gradient-size:1;
-        --static-gradient-color:#7743DB;
-    } */
-
-     .demo{
-       background-image: paint(doomfire);
-        --doomfire-pixel-size:1
-    } 
     
 </style>
 
 <body>
 
+    <section>
+        <div>
+            <h1>CSS Houdini is an Umbrella term for a set of browser APIs that expose certain parts of the CSS rendering engine to the
+            Developers.</h1>
+            <p>This repository contains examples of CSS Houdini APIs</p>
+        </div>
+        <div>
+            <ol>
+                <li>
+                    <a href="./CustomProperties/index.html" target="_blank" rel="noopener noreferrer">Custom Properties and Values API</a>
+                </li>
+                <li>
+                    <a href="./TypedObjectModel/index.html" target="_blank" rel="noopener noreferrer">Typed OM API</a>
+                </li>
+                <li>
+                    <a href="./PaintWorklet/index.html" target="_blank" rel="noopener noreferrer">Paint Worklet API - Example 1</a>
+                </li>
+                <li>
+                    <a href="./PaintWorklet/grid.html" target="_blank" rel="noopener noreferrer">Paint Worklet API - Example 2</a>
+                </li>
+                <li>
+                    <a href="./PaintWorklet/confetti.html" target="_blank" rel="noopener noreferrer">Paint Worklet API - Example 3</a>
+                </li>
+            </ol>
+        </div>
+    </section>
     
-<div class="demo">
-    <h1>HOUDINI PAINT API</h1>
-</div>
-    <!-- This is where we register the worklet -->
-    <!-- <script src='https://unpkg.com/extra.css/confetti.js'></script> -->
-    <script src="https://unpkg.com/houdini-doom-fire@0.1.0/DoomFire.js"></script>
 </body>
 
 </html>

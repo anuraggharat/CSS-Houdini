@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +8,33 @@
     <title>Document</title>
 </head>
 <style>
-    body{
-        background-color:#fefefe;
+    body {
+        background-color: #fefefe;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    h1{
+
+    h1 {
         font-family: 'Courier New', Courier, monospace;
         font-size: 30px;
     }
-    div{
+
+    div {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 400px;
         width: 800px;
     }
 </style>
+
 <body>
 
     <div id="container">
         <h1 id="heading">Typed OM using CSS Houdini</h1>
+        <p>Open the console log</p>
     </div>
 </body>
 <script>
@@ -43,8 +49,8 @@
     //getting styles using Typed OM
     console.log(elem.computedStyleMap().get("height"));
     console.log(elem.computedStyleMap().get("height").value);
-    console.log(typeof elem.computedStyleMap().get("height").value);
     console.log(elem.computedStyleMap().get("height").unit);
+    console.log(typeof elem.computedStyleMap().get("height").value);
 
     //setting styles using Typed OM
     var elemTwo = document.getElementById('heading')
@@ -68,4 +74,5 @@
     
 
 </script>
+
 </html>
