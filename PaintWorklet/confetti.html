@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Houdini Paint API</title>
+</head>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: #222;
+    }
+    section{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    div{
+        width: 1000px;
+        height: 500px;
+        background-color: aquamarine;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        
+    }
+    .demo{
+        background: paint(extra-confetti);
+        --extra-confettiNumber: 20; 
+        --extra-confettiLengthVariance: 20; 
+        --extra-confettiWeightVariance: 10;  
+        animation: animateConfetti 1s infinite; 
+    }
+    h1{
+        font-size: 5rem;
+        color: #fff;
+    }
+
+    @keyframes animateConfetti {
+        0%{
+        --extra-confettiNumber: 20; 
+
+        }
+        50%{
+           --extra-confettiNumber: 60; 
+        }
+        100%{
+           --extra-confettiNumber: 100; 
+        }
+    }
+
+</style>
+<body>
+    <section>
+        <div  class="demo">
+            <h1>CSS Houdini is Awesome!</h1>
+        </div>
+    </section>
+    <script>
+        CSS.paintWorklet.addModule('https://unpkg.com/extra-confetti/worklet.js')
+    </script>
+</body>
+    
+    </html>

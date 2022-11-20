@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    :root{
+        --red:red;
+        --yellow:yellow;
+    }
+
+body{
+    background-color: var(--primaryColor);
+    color: var(--red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@property --box-shadow-blur {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+
+
+
+.gradientBox { 
+  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, var(--colorPrimary) 60%);
+  transition: --colorPrimary 1s ease;
+}
+
+.gradientBox:hover {
+  --colorPrimary: red
+}
+
+
+</style>
+
+<body>
+    <div>
+        <h1>CUSTOM PROPERTIES AND VALUES - CSS HOUDINI</h1>
+        <button>Hover Me</button>
+        <div class="gradientBox">Hover Over Me</div>
+    </div>
+</body>
+
+<script>
+    CSS.registerProperty({
+        name: "--primaryColor",
+        syntax: "<color>",
+        inherits: false,
+        initialValue: "teal",
+    })
+    CSS.registerProperty({
+            name: "--colorPrimary",
+            syntax: "<color>",
+            inherits: false,
+            initialValue: "blue",
+        });
+
+</script>
+
+</html>

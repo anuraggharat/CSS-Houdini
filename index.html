@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Houdini - Paint Worklet</title>
+</head>
+<script>
+    // CSS.paintWorklet.addModule(
+    //     "https://unpkg.com/curved-line@1.0.0/curved-line.js"
+    // );
+
+    // CSS.paintWorklet.addModule('https://unpkg.com/houdini-static-gradient/worklet.js')
+    CSS.paintWorklet.addModule('https://unpkg.com/houdini-doom-fire@0.1.0/DoomFire.js')
+</script>
+<style>
+        /* h1 {
+            --extra-confettiNumber: 190;
+            --extra-confettiLengthVariance: 12;
+            --extra-confettiWeightVariance: 3;
+            background: paint(extra-confetti);
+        } */
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    div{
+        width: 100%;
+        min-height: 100vh;
+    }
+    /* .demo{
+        background: paint(static-gradient);
+        --static-gradient-size:1;
+        --static-gradient-color:#7743DB;
+    } */
+
+     .demo{
+       background-image: paint(doomfire);
+        --doomfire-pixel-size:1
+    } 
+    
+</style>
+
+<body>
+
+    
+<div class="demo">
+    <h1>HOUDINI PAINT API</h1>
+</div>
+    <!-- This is where we register the worklet -->
+    <!-- <script src='https://unpkg.com/extra.css/confetti.js'></script> -->
+    <script src="https://unpkg.com/houdini-doom-fire@0.1.0/DoomFire.js"></script>
+</body>
+
+</html>

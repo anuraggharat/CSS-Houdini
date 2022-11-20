@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:#fefefe;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+    }
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        width: 800px;
+    }
+</style>
+<body>
+
+    <div id="container">
+        <h1 id="heading">Typed OM using CSS Houdini</h1>
+    </div>
+</body>
+<script>
+    //select the container using javascript
+    var elem = document.getElementById('container')
+
+    elem.style.height=500;
+    console.log(typeof elem.style.height)
+    //String
+
+
+    //getting styles using Typed OM
+    console.log(elem.computedStyleMap().get("height"));
+    console.log(elem.computedStyleMap().get("height").value);
+    console.log(typeof elem.computedStyleMap().get("height").value);
+    console.log(elem.computedStyleMap().get("height").unit);
+
+    //setting styles using Typed OM
+    var elemTwo = document.getElementById('heading')
+    elemTwo.attributeStyleMap.set('font-size',CSS.px(50))
+
+    //getting inline-styles
+    console.log(elemTwo.attributeStyleMap.get('font-size'))
+
+    //an error will be thrown if we pass a non string value
+    //elemTwo.attributeStyleMap.set('font-size', CSS.px(asd))
+
+    //Clear all the styles
+    console.log(elemTwo.attributeStyleMap.clear)
+    //delet font-size style    
+    console.log(elemTwo.attributeStyleMap.delete('font-size'))
+    //check if style is present        
+    console.log(elemTwo.attributeStyleMap.has('font-size'))
+
+    
+
+    
+
+</script>
+</html>
